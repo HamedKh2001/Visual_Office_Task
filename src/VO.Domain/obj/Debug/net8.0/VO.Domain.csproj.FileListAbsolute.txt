@@ -1,0 +1,15 @@
+C:\.Net\VO\src\VO.Domain\bin\Debug\net8.0\VO.Domain.deps.json
+C:\.Net\VO\src\VO.Domain\bin\Debug\net8.0\VO.Domain.dll
+C:\.Net\VO\src\VO.Domain\bin\Debug\net8.0\VO.Domain.pdb
+C:\.Net\VO\src\VO.Domain\obj\Debug\net8.0\VO.Domain.csproj.AssemblyReference.cache
+C:\.Net\VO\src\VO.Domain\obj\Debug\net8.0\VO.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\.Net\VO\src\VO.Domain\obj\Debug\net8.0\VO.Domain.AssemblyInfoInputs.cache
+C:\.Net\VO\src\VO.Domain\obj\Debug\net8.0\VO.Domain.AssemblyInfo.cs
+C:\.Net\VO\src\VO.Domain\obj\Debug\net8.0\VO.Domain.csproj.CoreCompileInputs.cache
+C:\.Net\VO\src\VO.Domain\obj\Debug\net8.0\VO.Domain.dll
+C:\.Net\VO\src\VO.Domain\obj\Debug\net8.0\refint\VO.Domain.dll
+C:\.Net\VO\src\VO.Domain\obj\Debug\net8.0\VO.Domain.pdb
+C:\.Net\VO\src\VO.Domain\obj\Debug\net8.0\ref\VO.Domain.dll
+C:\.Net\VO\src\VO.Domain\bin\Debug\net8.0\SharedKernel.dll
+C:\.Net\VO\src\VO.Domain\bin\Debug\net8.0\SharedKernel.pdb
+C:\.Net\VO\src\VO.Domain\obj\Debug\net8.0\VO.Domain.csproj.CopyComplete

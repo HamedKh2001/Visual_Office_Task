@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>disable</ImplicitUsings>
+		<Nullable>disable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Pluralize.NET" Version="1.0.2" />
+		<PackageReference Include="FluentValidation" Version="11.5.1" />
+		<PackageReference Include="MediatR" Version="11.1.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="8.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="8.0.0" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+		<PackageReference Include="Elastic.Clients.Elasticsearch" Version="8.0.0" />
+		<PackageReference Include="NPOI" Version="2.6.0" />
+		<PackageReference Include="Serilog.AspNetCore" Version="3.4.0" />
+		<PackageReference Include="Serilog.Exceptions" Version="6.0.0" />
+		<PackageReference Include="Serilog.Sinks.ElasticSearch" Version="8.4.1" />
+		<PackageReference Include="MassTransit" Version="7.1.5" />
+	</ItemGroup>
+
+</Project>
