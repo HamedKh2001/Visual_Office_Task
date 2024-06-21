@@ -1,8 +1,8 @@
 {
   "Version": 1,
-  "Hash": "PZ32YqDg+XbrETKb+f2EQqqIzlfsy7AfN7di3MYLCuk=",
-  "Source": "BRTechGroup.HCM.WebAPI",
-  "BasePath": "_content/BRTechGroup.HCM.WebAPI",
+  "Hash": "shjKytcm0D4DJbFcAFaa3VFov5evb2swJLmsfmYmTjw=",
+  "Source": "VO.WebAPI",
+  "BasePath": "_content/VO.WebAPI",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],

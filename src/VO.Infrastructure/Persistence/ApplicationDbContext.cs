@@ -1,29 +1,35 @@
 ﻿using System.Reflection;
 using Microsoft.EntityFrameworkCore;
 using SharedKernel.Common;
-using Simba.SharedKernel.Extensions;
+using SharedKernel.Extensions;
+using VO.Domain.Entities;
 
 namespace VO.Infrastructure.Persistence
 {
-    public class ApplicationDbContext(DbContextOptions options) : DbContext(options)
+    public class ApplicationDbContext : DbContext
     {
-        // protected override void OnModelCreating(ModelBuilder modelBuilder)
-        // {
-        //     base.OnModelCreating(modelBuilder);
-        //     modelBuilder.UseCollation("Persian_100_CI_AI_SC_UTF8");
-        //     Assembly entitiesAssembly = typeof(IEntity).Assembly;
-        //     modelBuilder.RegisterAllEntities<IEntity>(entitiesAssembly);
-        //     modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);
-        //     modelBuilder.AddRestrictDeleteBehaviorConvention();
-        //     modelBuilder.AddPluralizingTableNameConvention();
-        // }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderLine> OrderLines { get; set; }
+
+        public ApplicationDbContext()
+        {
+        }
+
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
+        {
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
             base.OnModelCreating(modelBuilder);
+            modelBuilder.UseCollation("Persian_100_CI_AI_SC_UTF8");
+            Assembly entitiesAssembly = typeof(IEntity).Assembly;
+            modelBuilder.RegisterAllEntities<IEntity>(entitiesAssembly);
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+            modelBuilder.AddRestrictDeleteBehaviorConvention();
         }
-        
+
         public virtual void SetModified(object entity)
         {
             Entry(entity).State = EntityState.Modified;

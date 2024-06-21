@@ -5,13 +5,13 @@ using System.Reflection;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using SharedKernel.Common;
-using Simba.SharedKernel.Extensions;
+using SharedKernel.Extensions;
 
 namespace VO.Infrastructure.Persistence;
 
 public class ApplicationWriteDbContext : ApplicationDbContext
 {
-    public ApplicationWriteDbContext(DbContextOptions options) : base(options)
+    public ApplicationWriteDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
     {
         SavingChanges += OnSavingChanges;
     }

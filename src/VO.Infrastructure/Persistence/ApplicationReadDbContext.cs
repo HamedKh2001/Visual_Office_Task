@@ -2,4 +2,9 @@
 
 namespace VO.Infrastructure.Persistence;
 
-public class ApplicationReadDbContext(DbContextOptions options) : ApplicationDbContext(options);
+public class ApplicationReadDbContext : ApplicationDbContext
+{
+    public ApplicationReadDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
+    {
+    }
+}

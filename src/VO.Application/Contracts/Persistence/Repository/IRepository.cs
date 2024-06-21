@@ -68,11 +68,11 @@ public interface IRepository<TEntity> where TEntity : class, IEntity
     Task<TEntity> FindFirst(Expression<Func<TEntity, bool>> where, List<string> includesList = null);
     void Delete(TEntity entity);
     Task Update(TEntity entity);
-    Task<int> BatchDelete(Expression<Func<TEntity, bool>> where);
+    // Task<int> BatchDelete(Expression<Func<TEntity, bool>> where);
     Task<bool> AnyAsync(Expression<Func<TEntity, bool>> where);
 
-    Task<int> BatchUpdateImmediate(Expression<Func<TEntity, bool>> whereExpression,
-        Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>> propertyCall);
+    // Task<int> BatchUpdateImmediate(Expression<Func<TEntity, bool>> whereExpression,
+    //     Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>> propertyCall);
 
     //void Include<TProperty>(Expression<Func<TEntity, TProperty>> include,
     //    List<Expression<Func<TProperty, TProperty>>> thenInclude);

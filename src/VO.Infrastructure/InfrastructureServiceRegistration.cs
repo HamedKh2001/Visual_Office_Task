@@ -21,23 +21,22 @@ namespace VO.Infrastructure
         public static IServiceCollection AddInfrastructureServices(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddDbContext<ApplicationDbContext>(options =>
-                    options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"),
-                        builder => builder.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
+                    options.UseSqlServer(configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException()));
             
-            // services.AddDbContextPool<ApplicationWriteDbContext>(options =>
-            // {
-            //     options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"),
-            //             o => o.UseQuerySplittingBehavior(QuerySplittingBehavior.SplitQuery))
-            //         .EnableSensitiveDataLogging();
-            // });
-            //
-            // services.AddDbContextPool<ApplicationReadDbContext>(options =>
-            // {
-            //     options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"),
-            //             o => o.UseQuerySplittingBehavior(QuerySplittingBehavior.SplitQuery))
-            //         .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking)
-            //         .EnableSensitiveDataLogging();
-            // });
+            services.AddDbContextPool<ApplicationWriteDbContext>(options =>
+            {
+                options.UseSqlServer(configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException(),
+                        o => o.UseQuerySplittingBehavior(QuerySplittingBehavior.SplitQuery))
+                    .EnableSensitiveDataLogging();
+            });
+            
+            services.AddDbContextPool<ApplicationReadDbContext>(options =>
+            {
+                options.UseSqlServer(configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException(),
+                        o => o.UseQuerySplittingBehavior(QuerySplittingBehavior.SplitQuery))
+                    .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking)
+                    .EnableSensitiveDataLogging();
+            });
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddTransient<IDateTimeService, DateTimeService>();
@@ -80,7 +79,7 @@ namespace VO.Infrastructure
                     ValidIssuer = configuration["BearerTokens:Issuer"],
                     ValidateIssuer = true,
                     ValidateAudience = false,
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["BearerTokens:Key"])),
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["BearerTokens:Key"] ?? throw new InvalidOperationException())),
                     ValidateIssuerSigningKey = true,
                     ValidateLifetime = true,
                     ClockSkew = TimeSpan.FromMinutes(configuration.GetValue<int>("BearerTokens:ClockSkew"))

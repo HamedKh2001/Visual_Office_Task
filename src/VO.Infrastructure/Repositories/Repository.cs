@@ -79,7 +79,7 @@ internal class Repository<TEntity> : BaseAsyncRepository<TEntity>, IRepository<T
         if (pageNumber == 0)
             query = query.Take(pageSize);
 
-        else if (int.IsPositive(pageNumber))
+        else if (pageNumber > 0)
             query = query.Skip((pageNumber - 1) * pageSize).Take(pageSize);
         else
             query = fullPageCount + pageNumber + 1 < 0
@@ -119,7 +119,7 @@ internal class Repository<TEntity> : BaseAsyncRepository<TEntity>, IRepository<T
         if (pageNumber == 0)
             query = query.Take(pageSize);
 
-        else if (int.IsPositive(pageNumber))
+        else if (pageNumber > 0)
             query = query.Skip((pageNumber - 1) * pageSize).Take(pageSize);
         else
             query = fullPageCount + pageNumber + 1 < 0
@@ -161,7 +161,7 @@ internal class Repository<TEntity> : BaseAsyncRepository<TEntity>, IRepository<T
         if (pageNumber == 0)
             query = query.Take(pageSize);
 
-        else if (int.IsPositive(pageNumber))
+        else if (pageNumber > 0)
             query = query.Skip((pageNumber - 1) * pageSize).Take(pageSize);
         else
             query = fullPageCount + pageNumber + 1 < 0
@@ -194,7 +194,7 @@ internal class Repository<TEntity> : BaseAsyncRepository<TEntity>, IRepository<T
 
         if (where != null)
             query = query.Where(where);
-        
+
         if (searchExpression != null)
             query = query.Where(searchExpression);
 
@@ -219,7 +219,7 @@ internal class Repository<TEntity> : BaseAsyncRepository<TEntity>, IRepository<T
 
         if (pageNumber == 0)
             query = query.Take(pageSize);
-        else if (int.IsPositive(pageNumber))
+        else if (pageNumber > 0)
             query = query.Skip((pageNumber - 1) * pageSize).Take(pageSize);
         else
             query = fullPageCount + pageNumber + 1 < 0
@@ -234,9 +234,6 @@ internal class Repository<TEntity> : BaseAsyncRepository<TEntity>, IRepository<T
     }
 
 
-
-
-    
     public async Task<TEntity> FindOne(Expression<Func<TEntity, bool>> where, List<string> includesList = null)
     {
         IQueryable<TEntity> query = Table.Where(where);
@@ -299,10 +296,10 @@ internal class Repository<TEntity> : BaseAsyncRepository<TEntity>, IRepository<T
         return await query.ToListAsync();
     }
 
-    public async Task<int> BatchDelete(Expression<Func<TEntity, bool>> where)
-    {
-        return await Table.Where(where).ExecuteDeleteAsync();
-    }
+    // public async Task<int> BatchDelete(Expression<Func<TEntity, bool>> where)
+    // {
+    //     return await Table.Where(where).ExecuteDeleteAsync();
+    // }
 
     public async Task<T> Max<T>(Expression<Func<TEntity, T>> max, Expression<Func<TEntity, bool>> where)
     {
@@ -312,14 +309,14 @@ internal class Repository<TEntity> : BaseAsyncRepository<TEntity>, IRepository<T
         return await query.MaxAsync(max);
     }
 
-    public async Task<int> BatchUpdateImmediate(Expression<Func<TEntity, bool>> whereExpression,
-        Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>> propertyCall)
-    {
-        IQueryable<TEntity> table = Table;
-        if (whereExpression is not null)
-            table = table.Where(whereExpression);
-        return await table.ExecuteUpdateAsync(propertyCall);
-    }
+    // public async Task<int> BatchUpdateImmediate(Expression<Func<TEntity, bool>> whereExpression,
+    //     Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>> propertyCall)
+    // {
+    //     IQueryable<TEntity> table = Table;
+    //     if (whereExpression is not null)
+    //         table = table.Where(whereExpression);
+    //     return await table.ExecuteUpdateAsync(propertyCall);
+    // }
 
     public async Task<bool> AnyAsync(Expression<Func<TEntity, bool>> where)
     {
@@ -367,7 +364,8 @@ internal class Repository<TEntity> : BaseAsyncRepository<TEntity>, IRepository<T
         return await query.ToListAsync();
     }
 
-    public async Task<TEntity> FindFirstAsync(Expression<Func<TEntity, bool>> where, List<Expression<Func<TEntity, object>>> includesList)
+    public async Task<TEntity> FindFirstAsync(Expression<Func<TEntity, bool>> where,
+        List<Expression<Func<TEntity, object>>> includesList)
     {
         IQueryable<TEntity> query = Table;
         if (where is not null)
@@ -377,7 +375,8 @@ internal class Repository<TEntity> : BaseAsyncRepository<TEntity>, IRepository<T
         return await query.FirstOrDefaultAsync();
     }
 
-    public async Task<TEntity> Last(Expression<Func<TEntity, bool>> where, Expression<Func<TEntity, object>> orderBy, bool descending = false, List<string> includesList = null)
+    public async Task<TEntity> Last(Expression<Func<TEntity, bool>> where, Expression<Func<TEntity, object>> orderBy,
+        bool descending = false, List<string> includesList = null)
     {
         IQueryable<TEntity> query = Table;
         if (orderBy != null) query = descending ? query.OrderByDescending(orderBy) : query.OrderBy(orderBy);

@@ -1,4 +1,4 @@
-﻿namespace Simba.Application.Common;
+﻿namespace VO.Application.Common;
 
 public class SqlExceptionNumberConstants
 {

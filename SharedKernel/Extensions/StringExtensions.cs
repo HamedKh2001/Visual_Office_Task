@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Globalization;
 
-namespace Simba.SharedKernel.Extensions;
+namespace SharedKernel.Extensions;
 
 public static class StringExtensions
 {

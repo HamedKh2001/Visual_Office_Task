@@ -39,11 +39,11 @@ public abstract class BaseAsyncRepository<TEntity> where TEntity : class, IEntit
         await Entities.AddRangeAsync(entities);
     }
 
-    protected virtual async Task UpdateAsync(Expression<Func<TEntity, bool>> whereExpression,
-        Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>> updateExpression)
-    {
-        await Entities.Where(whereExpression).ExecuteUpdateAsync(updateExpression);
-    }
+    // protected virtual async Task UpdateAsync(Expression<Func<TEntity, bool>> whereExpression,
+    //     Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>> updateExpression)
+    // {
+    //     await Entities.Where(whereExpression).ExecuteUpdateAsync(updateExpression);
+    // }
 
     protected virtual Task TrackableUpdateAsync(TEntity entity)
     {
@@ -51,8 +51,8 @@ public abstract class BaseAsyncRepository<TEntity> where TEntity : class, IEntit
         return Task.CompletedTask;
     }
 
-    protected virtual async Task DeleteAsync(Expression<Func<TEntity, bool>> deleteExpression)
-    {
-        await Entities.Where(deleteExpression).ExecuteDeleteAsync();
-    }
+    // protected virtual async Task DeleteAsync(Expression<Func<TEntity, bool>> deleteExpression)
+    // {
+    //     await Entities.Where(deleteExpression).ExecuteDeleteAsync();
+    // }
 }

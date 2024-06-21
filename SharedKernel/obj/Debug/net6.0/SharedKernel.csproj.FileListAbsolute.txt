@@ -67,3 +67,16 @@ C:\.Net\VO\SharedKernel\obj\Debug\net6.0\SharedKernel.dll
 C:\.Net\VO\SharedKernel\obj\Debug\net6.0\refint\SharedKernel.dll
 C:\.Net\VO\SharedKernel\obj\Debug\net6.0\SharedKernel.pdb
 C:\.Net\VO\SharedKernel\obj\Debug\net6.0\ref\SharedKernel.dll
+C:\.Net\VO\Visual_Office_Task\SharedKernel\obj\Debug\net6.0\SharedKernel.csproj.AssemblyReference.cache
+C:\.Net\VO\Visual_Office_Task\SharedKernel\obj\Debug\net6.0\SharedKernel.GeneratedMSBuildEditorConfig.editorconfig
+C:\.Net\VO\Visual_Office_Task\SharedKernel\obj\Debug\net6.0\SharedKernel.AssemblyInfoInputs.cache
+C:\.Net\VO\Visual_Office_Task\SharedKernel\obj\Debug\net6.0\SharedKernel.AssemblyInfo.cs
+C:\.Net\VO\Visual_Office_Task\SharedKernel\obj\Debug\net6.0\SharedKernel.csproj.CoreCompileInputs.cache
+C:\.Net\VO\Visual_Office_Task\SharedKernel\obj\Debug\net6.0\SharedKernel.sourcelink.json
+C:\.Net\VO\Visual_Office_Task\SharedKernel\obj\Debug\net6.0\SharedKernel.dll
+C:\.Net\VO\Visual_Office_Task\SharedKernel\obj\Debug\net6.0\refint\SharedKernel.dll
+C:\.Net\VO\Visual_Office_Task\SharedKernel\obj\Debug\net6.0\SharedKernel.pdb
+C:\.Net\VO\Visual_Office_Task\SharedKernel\bin\Debug\net6.0\SharedKernel.deps.json
+C:\.Net\VO\Visual_Office_Task\SharedKernel\bin\Debug\net6.0\SharedKernel.dll
+C:\.Net\VO\Visual_Office_Task\SharedKernel\bin\Debug\net6.0\SharedKernel.pdb
+C:\.Net\VO\Visual_Office_Task\SharedKernel\obj\Debug\net6.0\ref\SharedKernel.dll

@@ -8,11 +8,18 @@ using VO.Domain.Entities;
 
 namespace VO.Application.Features.Product.Queries.TotalSoldProducts;
 
-public class TotalSoldProductsQueryHandler(IUnitOfWork unitOfWork) : IRequestHandler<TotalSoldProductsQuery, int>
+public class TotalSoldProductsQueryHandler : IRequestHandler<TotalSoldProductsQuery, int>
 {
+    private readonly IUnitOfWork _unitOfWork;
+
+    public TotalSoldProductsQueryHandler(IUnitOfWork unitOfWork)
+    {
+        _unitOfWork = unitOfWork;
+    }
+
     public async Task<int> Handle(TotalSoldProductsQuery request, CancellationToken cancellationToken)
     {
-        var query = unitOfWork.GetRepository<OrderLine>(true).GetQueryable();
+        var query = _unitOfWork.GetRepository<OrderLine>(true).GetQueryable();
 
         var totalQuantity = await query
             .Where(o => o.Order.Date >= request.FromDate && o.Order.Date <= request.ToDate)
