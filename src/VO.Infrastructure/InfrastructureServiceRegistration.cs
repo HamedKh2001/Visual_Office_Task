@@ -8,7 +8,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using SharedKernel.Common.Settings;
 using SharedKernel.Contracts.Infrastructure;
 using SharedKernel.Services;
 using VO.Application.Contracts.Persistence;
@@ -21,26 +20,24 @@ namespace VO.Infrastructure
     {
         public static IServiceCollection AddInfrastructureServices(this IServiceCollection services, IConfiguration configuration)
         {
-            services.Configure<List<CollaborativeSettingConfigurationModel>>(configuration.GetSection(CollaborativeSettingConfigurationModel.NAME));
-
-            // services.AddDbContext<ApplicationDbContext>(options =>
+            services.AddDbContext<ApplicationDbContext>(options =>
+                    options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"),
+                        builder => builder.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
+            
+            // services.AddDbContextPool<ApplicationWriteDbContext>(options =>
+            // {
             //     options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"),
-            //     builder => builder.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
-            
-            services.AddDbContextPool<ApplicationWriteDbContext>(options =>
-            {
-                options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"),
-                        o => o.UseQuerySplittingBehavior(QuerySplittingBehavior.SplitQuery))
-                    .EnableSensitiveDataLogging();
-            });
-            
-            services.AddDbContextPool<ApplicationReadDbContext>(options =>
-            {
-                options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"),
-                        o => o.UseQuerySplittingBehavior(QuerySplittingBehavior.SplitQuery))
-                    .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking)
-                    .EnableSensitiveDataLogging();
-            });
+            //             o => o.UseQuerySplittingBehavior(QuerySplittingBehavior.SplitQuery))
+            //         .EnableSensitiveDataLogging();
+            // });
+            //
+            // services.AddDbContextPool<ApplicationReadDbContext>(options =>
+            // {
+            //     options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"),
+            //             o => o.UseQuerySplittingBehavior(QuerySplittingBehavior.SplitQuery))
+            //         .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking)
+            //         .EnableSensitiveDataLogging();
+            // });
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddTransient<IDateTimeService, DateTimeService>();

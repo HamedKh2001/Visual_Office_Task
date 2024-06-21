@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\.Net\\VO\\src\\VO.Infrastructure\\VO.Infrastructure.csproj": {}
+    "C:\\.Net\\VO\\Visual_Office_Task\\src\\VO.Infrastructure\\VO.Infrastructure.csproj": {}
   },
   "projects": {
-    "C:\\.Net\\VO\\SharedKernel\\SharedKernel.csproj": {
+    "C:\\.Net\\VO\\Visual_Office_Task\\SharedKernel\\SharedKernel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\.Net\\VO\\SharedKernel\\SharedKernel.csproj",
+        "projectUniqueName": "C:\\.Net\\VO\\Visual_Office_Task\\SharedKernel\\SharedKernel.csproj",
         "projectName": "SharedKernel",
-        "projectPath": "C:\\.Net\\VO\\SharedKernel\\SharedKernel.csproj",
+        "projectPath": "C:\\.Net\\VO\\Visual_Office_Task\\SharedKernel\\SharedKernel.csproj",
         "packagesPath": "C:\\Users\\hmd13\\.nuget\\packages\\",
-        "outputPath": "C:\\.Net\\VO\\SharedKernel\\obj\\",
+        "outputPath": "C:\\.Net\\VO\\Visual_Office_Task\\SharedKernel\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -67,11 +67,11 @@
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[8.0.1, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[8.0.1, )"
             },
             "Microsoft.Extensions.Configuration.Abstractions": {
               "target": "Package",
@@ -130,14 +130,14 @@
         }
       }
     },
-    "C:\\.Net\\VO\\src\\VO.Application\\VO.Application.csproj": {
+    "C:\\.Net\\VO\\Visual_Office_Task\\src\\VO.Application\\VO.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\.Net\\VO\\src\\VO.Application\\VO.Application.csproj",
+        "projectUniqueName": "C:\\.Net\\VO\\Visual_Office_Task\\src\\VO.Application\\VO.Application.csproj",
         "projectName": "VO.Application",
-        "projectPath": "C:\\.Net\\VO\\src\\VO.Application\\VO.Application.csproj",
+        "projectPath": "C:\\.Net\\VO\\Visual_Office_Task\\src\\VO.Application\\VO.Application.csproj",
         "packagesPath": "C:\\Users\\hmd13\\.nuget\\packages\\",
-        "outputPath": "C:\\.Net\\VO\\src\\VO.Application\\obj\\",
+        "outputPath": "C:\\.Net\\VO\\Visual_Office_Task\\src\\VO.Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -159,11 +159,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\.Net\\VO\\SharedKernel\\SharedKernel.csproj": {
-                "projectPath": "C:\\.Net\\VO\\SharedKernel\\SharedKernel.csproj"
+              "C:\\.Net\\VO\\Visual_Office_Task\\SharedKernel\\SharedKernel.csproj": {
+                "projectPath": "C:\\.Net\\VO\\Visual_Office_Task\\SharedKernel\\SharedKernel.csproj"
               },
-              "C:\\.Net\\VO\\src\\VO.Domain\\VO.Domain.csproj": {
-                "projectPath": "C:\\.Net\\VO\\src\\VO.Domain\\VO.Domain.csproj"
+              "C:\\.Net\\VO\\Visual_Office_Task\\src\\VO.Domain\\VO.Domain.csproj": {
+                "projectPath": "C:\\.Net\\VO\\Visual_Office_Task\\src\\VO.Domain\\VO.Domain.csproj"
               }
             }
           }
@@ -212,11 +212,11 @@
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[8.0.1, )"
             },
             "Microsoft.EntityFrameworkCore.Relational": {
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[8.0.1, )"
             },
             "Microsoft.Extensions.Configuration.Abstractions": {
               "target": "Package",
@@ -251,14 +251,14 @@
         }
       }
     },
-    "C:\\.Net\\VO\\src\\VO.Domain\\VO.Domain.csproj": {
+    "C:\\.Net\\VO\\Visual_Office_Task\\src\\VO.Domain\\VO.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\.Net\\VO\\src\\VO.Domain\\VO.Domain.csproj",
+        "projectUniqueName": "C:\\.Net\\VO\\Visual_Office_Task\\src\\VO.Domain\\VO.Domain.csproj",
         "projectName": "VO.Domain",
-        "projectPath": "C:\\.Net\\VO\\src\\VO.Domain\\VO.Domain.csproj",
+        "projectPath": "C:\\.Net\\VO\\Visual_Office_Task\\src\\VO.Domain\\VO.Domain.csproj",
         "packagesPath": "C:\\Users\\hmd13\\.nuget\\packages\\",
-        "outputPath": "C:\\.Net\\VO\\src\\VO.Domain\\obj\\",
+        "outputPath": "C:\\.Net\\VO\\Visual_Office_Task\\src\\VO.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -280,8 +280,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\.Net\\VO\\SharedKernel\\SharedKernel.csproj": {
-                "projectPath": "C:\\.Net\\VO\\SharedKernel\\SharedKernel.csproj"
+              "C:\\.Net\\VO\\Visual_Office_Task\\SharedKernel\\SharedKernel.csproj": {
+                "projectPath": "C:\\.Net\\VO\\Visual_Office_Task\\SharedKernel\\SharedKernel.csproj"
               }
             }
           }
@@ -325,14 +325,14 @@
         }
       }
     },
-    "C:\\.Net\\VO\\src\\VO.Infrastructure\\VO.Infrastructure.csproj": {
+    "C:\\.Net\\VO\\Visual_Office_Task\\src\\VO.Infrastructure\\VO.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\.Net\\VO\\src\\VO.Infrastructure\\VO.Infrastructure.csproj",
+        "projectUniqueName": "C:\\.Net\\VO\\Visual_Office_Task\\src\\VO.Infrastructure\\VO.Infrastructure.csproj",
         "projectName": "VO.Infrastructure",
-        "projectPath": "C:\\.Net\\VO\\src\\VO.Infrastructure\\VO.Infrastructure.csproj",
+        "projectPath": "C:\\.Net\\VO\\Visual_Office_Task\\src\\VO.Infrastructure\\VO.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\hmd13\\.nuget\\packages\\",
-        "outputPath": "C:\\.Net\\VO\\src\\VO.Infrastructure\\obj\\",
+        "outputPath": "C:\\.Net\\VO\\Visual_Office_Task\\src\\VO.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -354,14 +354,14 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\.Net\\VO\\SharedKernel\\SharedKernel.csproj": {
-                "projectPath": "C:\\.Net\\VO\\SharedKernel\\SharedKernel.csproj"
+              "C:\\.Net\\VO\\Visual_Office_Task\\SharedKernel\\SharedKernel.csproj": {
+                "projectPath": "C:\\.Net\\VO\\Visual_Office_Task\\SharedKernel\\SharedKernel.csproj"
               },
-              "C:\\.Net\\VO\\src\\VO.Application\\VO.Application.csproj": {
-                "projectPath": "C:\\.Net\\VO\\src\\VO.Application\\VO.Application.csproj"
+              "C:\\.Net\\VO\\Visual_Office_Task\\src\\VO.Application\\VO.Application.csproj": {
+                "projectPath": "C:\\.Net\\VO\\Visual_Office_Task\\src\\VO.Application\\VO.Application.csproj"
               },
-              "C:\\.Net\\VO\\src\\VO.Domain\\VO.Domain.csproj": {
-                "projectPath": "C:\\.Net\\VO\\src\\VO.Domain\\VO.Domain.csproj"
+              "C:\\.Net\\VO\\Visual_Office_Task\\src\\VO.Domain\\VO.Domain.csproj": {
+                "projectPath": "C:\\.Net\\VO\\Visual_Office_Task\\src\\VO.Domain\\VO.Domain.csproj"
               }
             }
           }
@@ -406,15 +406,15 @@
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[8.0.1, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[8.0.1, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[8.0.1, )"
             },
             "Microsoft.Extensions.Caching.StackExchangeRedis": {
               "target": "Package",

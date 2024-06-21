@@ -8,21 +8,12 @@ using VO.Infrastructure.Persistence;
 
 namespace VO.Infrastructure.Repositories.Common;
 
-public class UnitOfWork : IUnitOfWork
+public class UnitOfWork(ApplicationWriteDbContext writeDbContext, ApplicationReadDbContext readDbContext)
+    : IUnitOfWork
 {
-    private readonly ApplicationReadDbContext _readDbContext;
-    private readonly Dictionary<Type, object> _readRepositories;
+    private readonly Dictionary<Type, object> _readRepositories = new();
 
-    private readonly ApplicationWriteDbContext _writeDbContext;
-    private readonly Dictionary<Type, object> _writeRepositories;
-
-    public UnitOfWork(ApplicationWriteDbContext writeDbContext, ApplicationReadDbContext readDbContext)
-    {
-        _writeDbContext = writeDbContext;
-        _readDbContext = readDbContext;
-        _readRepositories = new Dictionary<Type, object>();
-        _writeRepositories = new Dictionary<Type, object>();
-    }
+    private readonly Dictionary<Type, object> _writeRepositories = new();
 
     public IRepository<TEntity> GetRepository<TEntity>(bool onlyRead = false) where TEntity : class, IEntity
     {
@@ -30,18 +21,18 @@ public class UnitOfWork : IUnitOfWork
         if (repositories.ContainsKey(typeof(TEntity)))
             return repositories[typeof(TEntity)] as Repository<TEntity>;
 
-        var repository = new Repository<TEntity>(onlyRead ? _readDbContext : _writeDbContext, onlyRead);
+        var repository = new Repository<TEntity>(onlyRead ? readDbContext : writeDbContext, onlyRead);
         repositories.Add(typeof(TEntity), repository);
         return repository;
     }
 
     public Task<int> CommitAsync()
     {
-        return _writeDbContext.SaveChangesAsync();
+        return writeDbContext.SaveChangesAsync();
     }
 
     public ValueTask RollBackAsync()
     {
-        return _writeDbContext.DisposeAsync();
+        return writeDbContext.DisposeAsync();
     }
 }

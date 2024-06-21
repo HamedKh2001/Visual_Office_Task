@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\.Net\\VO\\SharedKernel\\SharedKernel.csproj": {}
+    "C:\\.Net\\VO\\Visual_Office_Task\\SharedKernel\\SharedKernel.csproj": {}
   },
   "projects": {
-    "C:\\.Net\\VO\\SharedKernel\\SharedKernel.csproj": {
+    "C:\\.Net\\VO\\Visual_Office_Task\\SharedKernel\\SharedKernel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\.Net\\VO\\SharedKernel\\SharedKernel.csproj",
+        "projectUniqueName": "C:\\.Net\\VO\\Visual_Office_Task\\SharedKernel\\SharedKernel.csproj",
         "projectName": "SharedKernel",
-        "projectPath": "C:\\.Net\\VO\\SharedKernel\\SharedKernel.csproj",
+        "projectPath": "C:\\.Net\\VO\\Visual_Office_Task\\SharedKernel\\SharedKernel.csproj",
         "packagesPath": "C:\\Users\\hmd13\\.nuget\\packages\\",
-        "outputPath": "C:\\.Net\\VO\\SharedKernel\\obj\\",
+        "outputPath": "C:\\.Net\\VO\\Visual_Office_Task\\SharedKernel\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -67,11 +67,11 @@
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[8.0.1, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[8.0.1, )"
             },
             "Microsoft.Extensions.Configuration.Abstractions": {
               "target": "Package",
